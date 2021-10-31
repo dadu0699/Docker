@@ -5,8 +5,6 @@ services:
     ports:
       - "3306:3306"
     restart: always
-    networks:
-      - db_network
     # volumes:
     #   - db_data:/var/lib/mysql
     environment:
