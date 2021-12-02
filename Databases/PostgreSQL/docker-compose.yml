@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 services:
   postgres:
     container_name: pg_container
@@ -13,18 +13,18 @@ services:
     logging:
       options:
         max-size: 10m
-        max-file: "3"
+        max-file: '3'
     # volumes: 
       # - ./postgres-data:/var/lib/postgresql/data
       # copy the sql script to create tables
       # - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
 
   pgadmin:
-      container_name: pgadmin4_container
-      image: dpage/pgadmin4
-      ports:
-        - "5050:80"
-      restart: always
-      environment:
-        PGADMIN_DEFAULT_EMAIL: admin@admin.com
-        PGADMIN_DEFAULT_PASSWORD: root
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    ports:
+      - '5050:80'
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
