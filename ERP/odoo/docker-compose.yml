@@ -7,6 +7,8 @@ services:
     ports:
       - '8069:8069'
     restart: on-failure
+    networks:
+      - odoo_network
 
   db:
     image: postgres:13
@@ -17,6 +19,8 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_USER: odoo
       POSTGRES_PASSWORD: odoo
+    networks:
+      - odoo_network
 
   pgadmin:
     image: dpage/pgadmin4
@@ -26,3 +30,9 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
+    networks:
+      - odoo_network
+
+networks:
+  odoo_network:
+    driver: "bridge"
