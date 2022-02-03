@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    restart: on-failure
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: rootSQLServer@2019
+      MSSQL_PID: Enterprise
+      MSSQL_TCP_PORT: 1433
